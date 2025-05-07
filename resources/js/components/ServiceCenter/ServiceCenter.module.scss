@@ -1,0 +1,92 @@
+$primary-bg: #2F3030;
+$text-color: white;
+$font-family: Montserrat, Helvetica, Arial, Lucida, sans-serif;
+$gap: 20px;
+$max-img-width: 64px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family;
+    padding: 30px 0 50px;
+    color: $text-color;
+    width: 80%;
+    margin: 0 auto;
+
+    .header {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 20px 0 40px;
+    }
+
+    .mainContent {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $gap;
+
+        .deviceInfo {
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+            box-sizing: border-box;
+            flex: 1 0 calc(25% - #{$gap});
+            min-width: 40%;
+
+            strong {
+                font-weight: 600;
+            }
+
+            div {
+                line-height: 1.4;
+            }
+
+            &.card {
+                background-color: $primary-bg;
+                border: 1px solid $primary-bg;
+                border-radius: 5px;
+
+                figure {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    min-height: 140px;
+                    margin: 0;
+
+                    img {
+                        max-width: $max-img-width;
+                    }
+
+                    figcaption {
+                        font-size: 0.95rem;
+                        color: $text-color;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .docsList {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+
+        .mainContent {
+            .deviceInfo {
+                flex: 1 0 100%;
+            }
+        }
+    }
+}
